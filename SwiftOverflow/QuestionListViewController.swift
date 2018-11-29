@@ -11,7 +11,10 @@ import UIKit
 class QuestionListViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   #warning("Update this to use dependency injection from a coordinator or other architecture")
-  let viewModel = QuestionListViewModel(networkService: NetworkService())
+  let network = NetworkService()
+  lazy var viewModel: QuestionListViewModel = {
+    return QuestionListViewModel(networkService: network)
+  }()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,8 +36,8 @@ extension QuestionListViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "questionListCell", for: indexPath) as? QuestionListTableViewCell else { return UITableViewCell() }
-    
-    cell.titleLabel.text = viewModel.question(forRow: indexPath.row).title
+    let question = viewModel.question(forRow: indexPath.row)
+    cell.viewModel = QuestionListCellViewModel(question: question, networkService: network)
     return cell
   }
 }
