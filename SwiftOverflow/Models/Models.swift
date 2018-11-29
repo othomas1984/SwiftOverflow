@@ -12,6 +12,7 @@ enum ModelError: Error {
   case noItemsFound
 }
 
+#warning("Split each model into it's own file. Makes them easier to find and digest")
 struct QuestionSearchResult: Decodable {
   let questions: [Question]
   let hasMore: Bool

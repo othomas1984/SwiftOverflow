@@ -53,6 +53,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		335D1A4621AFC1B9008BDCAD /* Question List */ = {
+			isa = PBXGroup;
+			children = (
+				33D432FF21AF66C300A54295 /* QuestionListViewController.swift */,
+				33053CCA21AF9C5E00B1F27E /* QuestionListViewModel.swift */,
+				33053CC821AF9B3800B1F27E /* QuestionListTableViewCell.swift */,
+				33053CCE21AFA48900B1F27E /* QuestionListCellViewModel.swift */,
+			);
+			path = "Question List";
+			sourceTree = "<group>";
+		};
+		335D1A4721AFC1D0008BDCAD /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				335D1A4021AFAFBA008BDCAD /* QuestionViewController.swift */,
+				335D1A4221AFB390008BDCAD /* QuestionViewModel.swift */,
+				335D1A4421AFC064008BDCAD /* AnswerTableViewCell.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		335D1A4821AFC1EA008BDCAD /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				335D1A4621AFC1B9008BDCAD /* Question List */,
+				335D1A4721AFC1D0008BDCAD /* Question */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		335D1A4921AFC239008BDCAD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				33D4331321AF686400A54295 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		335D1A4A21AFC23F008BDCAD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				33D4331121AF681C00A54295 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		335D1A4B21AFC254008BDCAD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				33053CCC21AFA0A600B1F27E /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		335D1A4C21AFC26E008BDCAD /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				33D4330421AF66C400A54295 /* Assets.xcassets */,
+				33D4330621AF66C400A54295 /* LaunchScreen.storyboard */,
+				33D4330921AF66C400A54295 /* Info.plist */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
 		33D432F121AF66C300A54295 = {
 			isa = PBXGroup;
 			children = (
@@ -72,21 +136,13 @@
 		33D432FC21AF66C300A54295 /* SwiftOverflow */ = {
 			isa = PBXGroup;
 			children = (
-				33D4331121AF681C00A54295 /* NetworkService.swift */,
-				33D4331321AF686400A54295 /* Models.swift */,
 				33D432FD21AF66C300A54295 /* AppDelegate.swift */,
-				33D432FF21AF66C300A54295 /* QuestionListViewController.swift */,
-				33053CCC21AFA0A600B1F27E /* UIViewController+Extensions.swift */,
-				33053CC821AF9B3800B1F27E /* QuestionListTableViewCell.swift */,
-				33053CCA21AF9C5E00B1F27E /* QuestionListViewModel.swift */,
-				33053CCE21AFA48900B1F27E /* QuestionListCellViewModel.swift */,
 				33D4330121AF66C300A54295 /* Main.storyboard */,
-				335D1A4021AFAFBA008BDCAD /* QuestionViewController.swift */,
-				335D1A4421AFC064008BDCAD /* AnswerTableViewCell.swift */,
-				335D1A4221AFB390008BDCAD /* QuestionViewModel.swift */,
-				33D4330421AF66C400A54295 /* Assets.xcassets */,
-				33D4330621AF66C400A54295 /* LaunchScreen.storyboard */,
-				33D4330921AF66C400A54295 /* Info.plist */,
+				335D1A4821AFC1EA008BDCAD /* Features */,
+				335D1A4A21AFC23F008BDCAD /* Services */,
+				335D1A4921AFC239008BDCAD /* Models */,
+				335D1A4B21AFC254008BDCAD /* Extensions */,
+				335D1A4C21AFC26E008BDCAD /* Extras */,
 			);
 			path = SwiftOverflow;
 			sourceTree = "<group>";
