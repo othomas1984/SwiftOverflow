@@ -28,7 +28,7 @@ class NetworkService {
       "intitle": "swift",
       "site": "stackoverflow",
       "pagesize": "100",
-      "filter": "!-*jbN-lC9cKO",
+      "filter": "!.FjuenCLawfW1_a5wPDDiyLK-SNgx",
       ]
     if let page = page.map(String.init(describing: )) {
       parameters["page"] = page
@@ -50,20 +50,21 @@ class NetworkService {
     task.resume()
   }
   
-  func getAnswers(questionID: Int, page: Int? = nil, completion: @escaping (AnswerSearchResult?, Error?) -> Void) {
+  func getQuestion(questionID: Int, page: Int? = nil, completion: @escaping (QuestionResult?, Error?) -> Void) {
+    #warning("This filter includes answers with questions, but may have a page limit. Further research necessary.")
     var parameters = [
       "order": "desc",
       "sort": "activity",
       "site": "stackoverflow",
-      "pagesize": "100",
-      "filter": "!-*jbN0Cev)Xb",
+      "pagesize": "30",
+      "filter": "!WXieGjYn8(v0Anl1u3hXPheHO(Uh43bKan7QW2Y",
       ]
     if let page = page.map(String.init(describing: )) {
       parameters["page"] = page
     }
     let request: URLRequest
     do {
-      request = try buildRequest(fromURL: "https://api.stackexchange.com/2.2/questions/\(questionID)/answers", parameters: parameters)
+      request = try buildRequest(fromURL: "https://api.stackexchange.com/2.2/questions/\(questionID)", parameters: parameters)
     } catch {
       completion(nil, error)
       return

@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     let network = NetworkService()
     network.getSwiftQuestions { (result, error) in
-      if let firstAnsweredQuestion = result?.questions.first(where: { $0.answers > 5 }) {
-        network.getAnswers(questionID: firstAnsweredQuestion.id) { (result, error) in
-          print(result?.answers.count)
-          print(result?.answers.first?.owner.name)
+      if let firstAnsweredQuestion = result?.questions.first(where: { $0.answerCount > 5 }) {
+        network.getQuestion(questionID: firstAnsweredQuestion.id) { (result, error) in
+          print(result?.question.answers.count)
+          print(result?.question.answers.first?.owner.name)
         }
       }
       print(result?.questions.count)

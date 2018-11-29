@@ -8,6 +8,10 @@
 
 import Foundation.NSURL
 
+enum ModelError: Error {
+  case noItemsFound
+}
+
 struct QuestionSearchResult: Decodable {
   let questions: [Question]
   let hasMore: Bool
@@ -28,38 +32,39 @@ struct QuestionSearchResult: Decodable {
 struct Question: Decodable {
   let id: Int
   let title: String
-  let body: String
+  let body: String?
   let owner: Owner
-  let answers: Int
+  let answerCount: Int
+  let answers: [Answer]
   
   enum CodingKeys: String, CodingKey {
-    case questionId, title, bodyMarkdown, owner, answerCount
+    case questionId, title, bodyMarkdown, owner, answerCount, answers
   }
   
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
     id = try values.decode(Int.self, forKey: .questionId)
     title = try values.decode(String.self, forKey: .title)
-    body = try values.decode(String.self, forKey: .bodyMarkdown)
+    body = try values.decodeIfPresent(String.self, forKey: .bodyMarkdown)
     owner = try values.decode(Owner.self, forKey: .owner)
-    answers = try values.decode(Int.self, forKey: .answerCount)
+    answerCount = try values.decode(Int.self, forKey: .answerCount)
+    answers = try values.decodeIfPresent([Answer].self, forKey: .answers) ?? []
   }
 }
 
-struct AnswerSearchResult: Decodable {
-  let answers: [Answer]
-  let hasMore: Bool
-  let total: Int
+struct QuestionResult: Decodable {
+  let question: Question
   
   enum CodingKeys: String, CodingKey {
-    case items, hasMore, total
+    case items
   }
   
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
-    answers = try values.decode([Answer].self, forKey: .items)
-    hasMore = try values.decode(Bool.self, forKey: .hasMore)
-    total = try values.decode(Int.self, forKey: .total)
+    guard let item = try values.decode([Question].self, forKey: .items).first else {
+      throw ModelError.noItemsFound
+    }
+    question = item
   }
 }
 
