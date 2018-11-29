@@ -39,6 +39,13 @@ class QuestionListViewModel {
   
   #warning("This will cause an app crash if one scrolls past the end of the currently loaded questions")
   func question(forRow row: Int) -> Question {
+    /////////////////////////////////////////////////////
+    // Sorry Sean, didn't get to real pagination in time
+    if row >= questions.count {
+      return questions[row % questions.count]
+    }
+    /////////////////////////////////////////////////////
+    
     return questions[row]
   }
 }
