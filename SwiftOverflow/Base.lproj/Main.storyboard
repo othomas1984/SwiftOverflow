@@ -41,14 +41,14 @@
                                                         <constraint firstAttribute="width" secondItem="weH-ji-Ka1" secondAttribute="height" id="O0G-to-qSb"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsS-rH-fRo">
-                                                    <rect key="frame" x="240" y="66" width="37.5" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfB-As-IgB">
+                                                    <rect key="frame" x="20" y="40" width="37.5" height="18"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfB-As-IgB">
-                                                    <rect key="frame" x="20" y="40" width="37.5" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsS-rH-fRo">
+                                                    <rect key="frame" x="240" y="66" width="37.5" height="18"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -69,6 +69,12 @@
                                                 <constraint firstAttribute="bottom" secondItem="weH-ji-Ka1" secondAttribute="bottom" id="z2w-k2-Tfc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="answerCountLabel" destination="vfB-As-IgB" id="NIq-No-HuW"/>
+                                            <outlet property="authorNameLabel" destination="IsS-rH-fRo" id="XAx-mx-lx0"/>
+                                            <outlet property="profileImageView" destination="weH-ji-Ka1" id="J2Q-WD-iRJ"/>
+                                            <outlet property="titleLabel" destination="hb6-Yx-ilF" id="fHS-AR-jfL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

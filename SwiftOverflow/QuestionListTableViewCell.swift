@@ -9,7 +9,11 @@
 import UIKit
 
 class QuestionListTableViewCell: UITableViewCell {
-
+  @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var profileImageView: UIImageView!
+  @IBOutlet weak var answerCountLabel: UILabel!
+  @IBOutlet weak var authorNameLabel: UILabel!
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
