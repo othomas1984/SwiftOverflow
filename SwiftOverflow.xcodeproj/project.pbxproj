@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33053CC921AF9B3800B1F27E /* QuestionListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053CC821AF9B3800B1F27E /* QuestionListTableViewCell.swift */; };
+		33053CCB21AF9C5E00B1F27E /* QuestionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053CCA21AF9C5E00B1F27E /* QuestionListViewModel.swift */; };
 		33053CCD21AFA0A600B1F27E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053CCC21AFA0A600B1F27E /* UIViewController+Extensions.swift */; };
 		33D432FE21AF66C300A54295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D432FD21AF66C300A54295 /* AppDelegate.swift */; };
 		33D4330021AF66C300A54295 /* QuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D432FF21AF66C300A54295 /* QuestionListViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		33053CC821AF9B3800B1F27E /* QuestionListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListTableViewCell.swift; sourceTree = "<group>"; };
+		33053CCA21AF9C5E00B1F27E /* QuestionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewModel.swift; sourceTree = "<group>"; };
 		33053CCC21AFA0A600B1F27E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		33D432FA21AF66C300A54295 /* SwiftOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D432FD21AF66C300A54295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				33D432FF21AF66C300A54295 /* QuestionListViewController.swift */,
 				33053CCC21AFA0A600B1F27E /* UIViewController+Extensions.swift */,
 				33053CC821AF9B3800B1F27E /* QuestionListTableViewCell.swift */,
+				33053CCA21AF9C5E00B1F27E /* QuestionListViewModel.swift */,
 				33D4330121AF66C300A54295 /* Main.storyboard */,
 				33D4330421AF66C400A54295 /* Assets.xcassets */,
 				33D4330621AF66C400A54295 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			files = (
 				33D4331221AF681C00A54295 /* NetworkService.swift in Sources */,
 				33D4330021AF66C300A54295 /* QuestionListViewController.swift in Sources */,
+				33053CCB21AF9C5E00B1F27E /* QuestionListViewModel.swift in Sources */,
 				33053CCD21AFA0A600B1F27E /* UIViewController+Extensions.swift in Sources */,
 				33D432FE21AF66C300A54295 /* AppDelegate.swift in Sources */,
 				33D4331421AF686400A54295 /* Models.swift in Sources */,
