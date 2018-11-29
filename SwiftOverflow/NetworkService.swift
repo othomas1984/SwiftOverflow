@@ -40,14 +40,13 @@ class NetworkService {
       completion(nil, error)
       return
     }
-    let task = session.dataTask(with: request) { (data, response, error) in
+    session.dataTask(with: request) { (data, response, error) in
       do {
         completion(try self.processResponse(data: data, response: response, error: error), nil)
       } catch {
         completion(nil, error)
       }
-    }
-    task.resume()
+    }.resume()
   }
   
   func getQuestion(questionID: Int, page: Int? = nil, completion: @escaping (QuestionResult?, Error?) -> Void) {
@@ -69,14 +68,25 @@ class NetworkService {
       completion(nil, error)
       return
     }
-    let task = session.dataTask(with: request) { (data, response, error) in
+    session.dataTask(with: request) { (data, response, error) in
       do {
         completion(try self.processResponse(data: data, response: response, error: error), nil)
       } catch {
         completion(nil, error)
       }
-    }
-    task.resume()
+    }.resume()
+  }
+  
+  func imageData(for url: URL, completion: @escaping (Data?, Error?) -> Void) {
+    let request = URLRequest(url: url)
+    session.dataTask(with: request) { data, response, error in
+      if let error = error {
+        completion(nil, error)
+        return
+      }
+      guard let data = data else { completion(nil, NetworkError.noData); return }
+      completion(data, nil)
+    }.resume()
   }
   
   private func buildRequest(fromURL url: String, parameters: [String: String]?) throws -> URLRequest {
