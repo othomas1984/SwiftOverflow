@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QuestionListViewController.swift
 //  SwiftOverflow
 //
 //  Created by Owen Thomas on 11/28/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuestionListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     let network = NetworkService()
