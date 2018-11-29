@@ -14,15 +14,15 @@ class QuestionListTableViewCell: UITableViewCell {
   @IBOutlet weak var answerCountLabel: UILabel!
   @IBOutlet weak var authorNameLabel: UILabel!
   
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    // Initialization code
+  }
+  
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    
+    // Configure the view for the selected state
+  }
+  
 }
