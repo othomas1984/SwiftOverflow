@@ -52,8 +52,29 @@ struct Question: Decodable {
   }
 }
 
+struct QuestionDetail: Decodable {
+  let id: Int
+  let title: String
+  let body: String
+  let owner: Owner
+  let answers: [Answer]
+  
+  enum CodingKeys: String, CodingKey {
+    case questionId, title, bodyMarkdown, owner, answers
+  }
+  
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    id = try values.decode(Int.self, forKey: .questionId)
+    title = try values.decode(String.self, forKey: .title)
+    body = try values.decode(String.self, forKey: .bodyMarkdown)
+    owner = try values.decode(Owner.self, forKey: .owner)
+    answers = try values.decodeIfPresent([Answer].self, forKey: .answers) ?? []
+  }
+}
+
 struct QuestionResult: Decodable {
-  let question: Question
+  let questionDetail: QuestionDetail
   
   enum CodingKeys: String, CodingKey {
     case items
@@ -61,10 +82,10 @@ struct QuestionResult: Decodable {
   
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
-    guard let item = try values.decode([Question].self, forKey: .items).first else {
+    guard let item = try values.decode([QuestionDetail].self, forKey: .items).first else {
       throw ModelError.noItemsFound
     }
-    question = item
+    questionDetail = item
   }
 }
 
