@@ -39,8 +39,10 @@ class QuestionListTableViewCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
+    profileImageView.layer.cornerRadius = 4
+    profileImageView.layer.masksToBounds = true
   }
+  
   override func prepareForReuse() {
     viewModel = nil
   }

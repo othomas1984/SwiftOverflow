@@ -52,5 +52,4 @@ class QuestionViewModel {
   func authorProfileImageData(completion: @escaping (Data?, Error?) -> Void) {
     network.imageData(for: detail?.owner.imageURL ?? question.owner.imageURL, completion: completion)
   }
-
 }

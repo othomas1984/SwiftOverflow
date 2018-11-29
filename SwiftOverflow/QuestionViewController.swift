@@ -21,6 +21,7 @@ class QuestionViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupUI()
     viewModel.fetchDetail { error in
       if let error = error {
         #warning("Do something more useful when there's an error")
@@ -30,6 +31,11 @@ class QuestionViewController: UIViewController {
 
       self.tableView.reloadData()
     }
+  }
+  
+  private func setupUI() {
+    profileImageView.layer.cornerRadius = 4
+    profileImageView.layer.masksToBounds = true
   }
   
   private func updateUI() {
