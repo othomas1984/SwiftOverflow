@@ -37,6 +37,7 @@ class QuestionListViewModel {
     return questionCount
   }
   
+  #warning("This will cause an app crash if one scrolls past the end of the currently loaded questions")
   func question(forRow row: Int) -> Question {
     return questions[row]
   }
