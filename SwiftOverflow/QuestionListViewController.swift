@@ -9,18 +9,32 @@
 import UIKit
 
 class QuestionListViewController: UIViewController {
+  @IBOutlet weak var tableView: UITableView!
+  #warning("Update this to use dependency injection from a coordinator or other architecture")
+  let viewModel = QuestionListViewModel(networkService: NetworkService())
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    let network = NetworkService()
-    network.getSwiftQuestions { (result, error) in
-      if let firstAnsweredQuestion = result?.questions.first(where: { $0.answerCount > 5 }) {
-        network.getQuestion(questionID: firstAnsweredQuestion.id) { (result, error) in
-          print(result?.question.answers.count)
-          print(result?.question.answers.first?.owner.name)
-        }
+    tableView.dataSource = self
+    viewModel.fetchInitialQuestions { error in
+      if let error = error {
+        #warning("Do something more useful when there's an error")
+        self.displayGenericAlert(title: "Network Fetch Error", message: error.localizedDescription)
       }
-      print(result?.questions.count)
-      print(result?.questions.first?.owner.name)
+      self.tableView.reloadData()
     }
+  }
+}
+
+extension QuestionListViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return viewModel.numberOfQuestions
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "questionListCell", for: indexPath) as? QuestionListTableViewCell else { return UITableViewCell() }
+    
+    cell.titleLabel.text = viewModel.question(forRow: indexPath.row).title
+    return cell
   }
 }
