@@ -15,16 +15,7 @@ class QuestionListViewController: UIViewController {
   lazy var viewModel: QuestionListViewModel = {
     return QuestionListViewModel(networkService: network)
   }()
-  override func viewWillDisappear(_ animated: Bool) {
-    self.navigationController?.setNavigationBarHidden(false, animated: animated);
-    super.viewWillDisappear(animated)
-  }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    self.navigationController?.setNavigationBarHidden(true, animated: animated)
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.dataSource = self
@@ -38,6 +29,16 @@ class QuestionListViewController: UIViewController {
     }
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    self.navigationController?.setNavigationBarHidden(false, animated: animated);
+    super.viewWillDisappear(animated)
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.navigationController?.setNavigationBarHidden(true, animated: animated)
+  }
+
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard let destination = segue.destination as? QuestionViewController,
       let indexPath = tableView.indexPathForSelectedRow else { return }

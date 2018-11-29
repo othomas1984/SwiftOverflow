@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit.UIImage
 
 class QuestionListCellViewModel {
   private let network: NetworkService

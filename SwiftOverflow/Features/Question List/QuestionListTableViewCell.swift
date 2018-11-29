@@ -18,7 +18,7 @@ class QuestionListTableViewCell: UITableViewCell {
       titleLabel.text = viewModel.title
       answerCountLabel.text = viewModel.answers
       authorNameLabel.text = viewModel.authorName
-      #warning("Add a cache in here, this will redownload the image each time")
+      #warning("Add a cache in here, this will redownload the image each time depending on the server's cache settings")
       viewModel.authorProfileImageData { (data, error) in
         guard let data = data, error == nil else {
           #warning("Show an image of a failed download")
@@ -26,6 +26,7 @@ class QuestionListTableViewCell: UITableViewCell {
         }
         let image = UIImage(data: data)
         DispatchQueue.main.async {
+          #warning("check to make sure the cell hasn't been reused since the network request was initiated, otherwise there may be a race")
           self.profileImageView.image = image
         }
       }
