@@ -36,6 +36,8 @@ class QuestionViewController: UIViewController {
   private func setupUI() {
     profileImageView.layer.cornerRadius = 4
     profileImageView.layer.masksToBounds = true
+    tableView.dataSource = self
+    tableView.tableFooterView = UIView()
   }
   
   private func updateUI() {
@@ -53,5 +55,18 @@ class QuestionViewController: UIViewController {
         self.profileImageView.image = image
       }
     }
+  }
+}
+
+extension QuestionViewController: UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return viewModel.numberOfAnswers
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "answerListCell", for: indexPath) as? AnswerTableViewCell else { return UITableViewCell() }
+    let answer = viewModel.answer(forRow: indexPath.row)
+    cell.bodyLabel.text = answer.body
+    return cell
   }
 }

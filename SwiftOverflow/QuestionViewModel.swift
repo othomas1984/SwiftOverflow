@@ -52,4 +52,13 @@ class QuestionViewModel {
   func authorProfileImageData(completion: @escaping (Data?, Error?) -> Void) {
     network.imageData(for: detail?.owner.imageURL ?? question.owner.imageURL, completion: completion)
   }
+  
+  var numberOfAnswers: Int {
+    return detail?.answers.count ?? 0
+  }
+  
+  func answer(forRow row: Int) -> Answer {
+    #warning("What is this? This is not good. Don't forget to come back here")
+    return (detail?.answers ?? [])[row]
+  }
 }
