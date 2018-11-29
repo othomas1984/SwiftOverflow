@@ -19,6 +19,8 @@ class QuestionListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.dataSource = self
+    tableView.delegate = self
+    
     viewModel.fetchInitialQuestions { error in
       if let error = error {
         #warning("Do something more useful when there's an error")
@@ -39,5 +41,11 @@ extension QuestionListViewController: UITableViewDataSource {
     let question = viewModel.question(forRow: indexPath.row)
     cell.viewModel = QuestionListCellViewModel(question: question, networkService: network)
     return cell
+  }
+}
+
+extension QuestionListViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.cellForRow(at: indexPath)?.isSelected = false
   }
 }
