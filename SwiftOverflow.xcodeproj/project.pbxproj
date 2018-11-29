@@ -13,6 +13,7 @@
 		33053CCF21AFA48900B1F27E /* QuestionListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33053CCE21AFA48900B1F27E /* QuestionListCellViewModel.swift */; };
 		335D1A4121AFAFBA008BDCAD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335D1A4021AFAFBA008BDCAD /* QuestionViewController.swift */; };
 		335D1A4321AFB390008BDCAD /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335D1A4221AFB390008BDCAD /* QuestionViewModel.swift */; };
+		335D1A4521AFC064008BDCAD /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335D1A4421AFC064008BDCAD /* AnswerTableViewCell.swift */; };
 		33D432FE21AF66C300A54295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D432FD21AF66C300A54295 /* AppDelegate.swift */; };
 		33D4330021AF66C300A54295 /* QuestionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D432FF21AF66C300A54295 /* QuestionListViewController.swift */; };
 		33D4330321AF66C300A54295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33D4330121AF66C300A54295 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		33053CCE21AFA48900B1F27E /* QuestionListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListCellViewModel.swift; sourceTree = "<group>"; };
 		335D1A4021AFAFBA008BDCAD /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		335D1A4221AFB390008BDCAD /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		335D1A4421AFC064008BDCAD /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 		33D432FA21AF66C300A54295 /* SwiftOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D432FD21AF66C300A54295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33D432FF21AF66C300A54295 /* QuestionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionListViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				33053CCE21AFA48900B1F27E /* QuestionListCellViewModel.swift */,
 				33D4330121AF66C300A54295 /* Main.storyboard */,
 				335D1A4021AFAFBA008BDCAD /* QuestionViewController.swift */,
+				335D1A4421AFC064008BDCAD /* AnswerTableViewCell.swift */,
 				335D1A4221AFB390008BDCAD /* QuestionViewModel.swift */,
 				33D4330421AF66C400A54295 /* Assets.xcassets */,
 				33D4330621AF66C400A54295 /* LaunchScreen.storyboard */,
@@ -168,6 +171,7 @@
 				33D432FE21AF66C300A54295 /* AppDelegate.swift in Sources */,
 				33D4331421AF686400A54295 /* Models.swift in Sources */,
 				33053CC921AF9B3800B1F27E /* QuestionListTableViewCell.swift in Sources */,
+				335D1A4521AFC064008BDCAD /* AnswerTableViewCell.swift in Sources */,
 				335D1A4121AFAFBA008BDCAD /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
