@@ -28,8 +28,6 @@ class QuestionListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.dataSource = self
-    tableView.delegate = self
-    
     
     viewModel.fetchInitialQuestions { error in
       if let error = error {
@@ -38,6 +36,14 @@ class QuestionListViewController: UIViewController {
       }
       self.tableView.reloadData()
     }
+  }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let destination = segue.destination as? QuestionViewController,
+      let indexPath = tableView.indexPathForSelectedRow else { return }
+    let model = QuestionViewModel(question: viewModel.question(forRow: indexPath.row), networkService: network)
+    destination.viewModel = model
+    tableView.cellForRow(at: indexPath)?.isSelected = false
   }
 }
 
@@ -51,11 +57,5 @@ extension QuestionListViewController: UITableViewDataSource {
     let question = viewModel.question(forRow: indexPath.row)
     cell.viewModel = QuestionListCellViewModel(question: question, networkService: network)
     return cell
-  }
-}
-
-extension QuestionListViewController: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.cellForRow(at: indexPath)?.isSelected = false
   }
 }

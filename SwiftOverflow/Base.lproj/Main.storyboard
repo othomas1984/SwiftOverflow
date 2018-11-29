@@ -107,26 +107,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="136" estimatedRowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P5E-0e-1Z2">
-                                <rect key="frame" x="0.0" y="170.5" width="375" height="496.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="questionListCell" rowHeight="136" id="pOe-NX-uhz" customClass="QuestionListTableViewCell" customModule="SwiftOverflow" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="136"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pOe-NX-uhz" id="0O6-sM-vLz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="answerCountLabel" destination="Kvl-FW-YS1" id="fNO-eG-Rvz"/>
-                                            <outlet property="authorNameLabel" destination="i2H-mh-r4a" id="S4b-lQ-fhm"/>
-                                            <outlet property="profileImageView" destination="UY2-jF-Fm3" id="b0J-1m-ggE"/>
-                                            <outlet property="titleLabel" destination="ml6-va-YoT" id="MGb-5d-ueE"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ml6-va-YoT">
                                 <rect key="frame" x="20" y="64" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
@@ -152,6 +132,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="136" estimatedRowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P5E-0e-1Z2">
+                                <rect key="frame" x="0.0" y="321" width="375" height="346"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="questionListCell" rowHeight="136" id="pOe-NX-uhz" customClass="QuestionListTableViewCell" customModule="SwiftOverflow" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pOe-NX-uhz" id="0O6-sM-vLz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vm-gP-FNB">
+                                <rect key="frame" x="20" y="170" width="335" height="143"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5U2-WK-xqa">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5U2-WK-xqa" firstAttribute="top" secondItem="5vm-gP-FNB" secondAttribute="top" id="5Xr-JM-iYs"/>
+                                    <constraint firstAttribute="height" constant="143" id="Odi-95-CeW"/>
+                                    <constraint firstItem="5U2-WK-xqa" firstAttribute="width" secondItem="5vm-gP-FNB" secondAttribute="width" id="eo1-Cj-tkL"/>
+                                    <constraint firstAttribute="bottom" secondItem="5U2-WK-xqa" secondAttribute="bottom" id="sCO-M5-WCu"/>
+                                    <constraint firstAttribute="trailing" secondItem="5U2-WK-xqa" secondAttribute="trailing" id="vYG-NW-Gjd"/>
+                                    <constraint firstItem="5U2-WK-xqa" firstAttribute="leading" secondItem="5vm-gP-FNB" secondAttribute="leading" id="zKg-Bh-UIX"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -165,16 +178,24 @@
                             <constraint firstItem="ml6-va-YoT" firstAttribute="leading" secondItem="aez-M0-t6Q" secondAttribute="leading" constant="20" symbolic="YES" id="Rl6-Qc-vbp"/>
                             <constraint firstItem="ml6-va-YoT" firstAttribute="top" secondItem="aez-M0-t6Q" secondAttribute="topMargin" id="ZdZ-RR-lpK"/>
                             <constraint firstItem="IMZ-Uv-VNB" firstAttribute="bottom" secondItem="P5E-0e-1Z2" secondAttribute="bottom" id="aOo-FG-YsD"/>
+                            <constraint firstItem="5vm-gP-FNB" firstAttribute="leading" secondItem="IMZ-Uv-VNB" secondAttribute="leading" constant="20" id="aeS-m4-IEf"/>
                             <constraint firstItem="UY2-jF-Fm3" firstAttribute="leading" secondItem="i2H-mh-r4a" secondAttribute="trailing" constant="8" symbolic="YES" id="bLC-bT-N7A"/>
+                            <constraint firstItem="IMZ-Uv-VNB" firstAttribute="trailing" secondItem="5vm-gP-FNB" secondAttribute="trailing" constant="20" id="cTz-Ae-1QG"/>
+                            <constraint firstItem="5vm-gP-FNB" firstAttribute="top" secondItem="UY2-jF-Fm3" secondAttribute="bottom" constant="7.5" id="ef5-Jo-LbE"/>
+                            <constraint firstItem="P5E-0e-1Z2" firstAttribute="top" secondItem="5vm-gP-FNB" secondAttribute="bottom" constant="8" id="hbM-V6-nNs"/>
                             <constraint firstItem="UY2-jF-Fm3" firstAttribute="top" secondItem="ml6-va-YoT" secondAttribute="bottom" constant="8" symbolic="YES" id="hbi-62-ALN"/>
                             <constraint firstItem="P5E-0e-1Z2" firstAttribute="leading" secondItem="IMZ-Uv-VNB" secondAttribute="leading" id="lBP-m1-Tao"/>
-                            <constraint firstItem="P5E-0e-1Z2" firstAttribute="top" secondItem="UY2-jF-Fm3" secondAttribute="bottom" constant="8" symbolic="YES" id="qVy-f5-tmr"/>
                             <constraint firstItem="i2H-mh-r4a" firstAttribute="centerY" secondItem="UY2-jF-Fm3" secondAttribute="centerY" id="rhY-qq-fRE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IMZ-Uv-VNB"/>
                     </view>
                     <connections>
+                        <outlet property="answerCountLabel" destination="Kvl-FW-YS1" id="IV2-J2-u4V"/>
+                        <outlet property="authorNameLabel" destination="i2H-mh-r4a" id="eZH-cF-jUr"/>
+                        <outlet property="bodyLabel" destination="5U2-WK-xqa" id="KSC-CB-CRR"/>
+                        <outlet property="profileImageView" destination="UY2-jF-Fm3" id="1eg-q3-61r"/>
                         <outlet property="tableView" destination="P5E-0e-1Z2" id="RH9-YO-tcC"/>
+                        <outlet property="titleLabel" destination="ml6-va-YoT" id="28E-Mt-e0b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gR8-C7-qGS" sceneMemberID="firstResponder"/>
