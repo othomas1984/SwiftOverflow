@@ -50,7 +50,9 @@ class QuestionViewModel {
   }
   
   func authorProfileImageData(completion: @escaping (Data?, Error?) -> Void) {
-    network.imageData(for: detail?.owner.imageURL ?? question.owner.imageURL, completion: completion)
+    #warning("Call a completion even on guard return")
+    guard let url = detail?.owner.imageURL ?? question.owner.imageURL else { return }
+    network.imageData(for: url, completion: completion)
   }
   
   var numberOfAnswers: Int {

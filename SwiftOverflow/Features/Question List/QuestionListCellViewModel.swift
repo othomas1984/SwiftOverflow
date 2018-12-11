@@ -30,6 +30,8 @@ class QuestionListCellViewModel {
   }
   
   func authorProfileImageData(completion: @escaping (Data?, Error?) -> Void) {
-    network.imageData(for: question.owner.imageURL, completion: completion)
+    #warning("Call a completion even on guard return")
+    guard let url = question.owner.imageURL else { return }
+    network.imageData(for: url, completion: completion)
   }
 }

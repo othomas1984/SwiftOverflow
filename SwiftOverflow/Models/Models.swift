@@ -107,7 +107,7 @@ struct Answer: Decodable {
 
 struct Owner: Decodable {
   let name: String
-  let imageURL: URL
+  let imageURL: URL?
   
   enum CodingKeys: String, CodingKey {
     case displayName, profileImage
@@ -116,6 +116,6 @@ struct Owner: Decodable {
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
     name = try values.decode(String.self, forKey: .displayName)
-    imageURL = try values.decode(URL.self, forKey: .profileImage)
+    imageURL = try values.decodeIfPresent(URL.self, forKey: .profileImage)
   }
 }
